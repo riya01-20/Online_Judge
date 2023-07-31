@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --max-old-space-size=4096 index.js"
   },
-  "author": "Mohit Khairnar",
+  "author": "Riya Singh",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
