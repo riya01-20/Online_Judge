@@ -6,12 +6,12 @@ export default function Navbar() {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="font-poppin bg-white border-gray-200 dark:bg-gray-900">
         <div className="justify-between px-4 mx-auto lg:max-w-9xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items- justify-between py-3 md:py-5 md:block">
               <Link to="/">
-                <h1 className="mb-4 flex items-center justify-center font-semibold md:justify-start text-5xl text-gold font-lilita">
+                <h1 className="mb-4 flex items-center justify-center font-semibold md:justify-start text-5xl text-cyan-400 text-opacity-50 font-lato">
                   {" "}
                   {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -21,10 +21,9 @@ export default function Navbar() {
                   >
                     <path d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
                   </svg> */}
-                  Online_Judge
+                  AlgorithmArena
                 </h1>
               </Link>
-
               <div className="md:hidden">
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -70,10 +69,10 @@ export default function Navbar() {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-2xl">
-                <li className="text-gold hover:text-indigo-200 font-medium">
+                <li className="text-cyan-200 font-medium hover:text-fuchsia-200 hover:italic hover:font-bold">
                   <Link to="/problems">Problems</Link>
                 </li>
-                <li className="text-gold hover:text-indigo-200 font-medium">
+                <li className="text-cyan-200 font-medium hover:text-fuchsia-200 hover:italic hover:font-bold">
                   <Link to="/submissions">Submissions</Link>
                 </li>
                 {/* <li className="text-gold hover:text-indigo-200 font-medium">
@@ -82,7 +81,7 @@ export default function Navbar() {
                 
                 {localStorage.getItem("user_token") ? <>
                 <li>
-                    <button className="text-gold hover:text-indigo-200 font-medium" onClick={() => {
+                    <button className="text-cyan-200 font-medium hover:text-fuchsia-200 hover:italic hover:font-bold" onClick={() => {
                         localStorage.removeItem("user_token");
                         window.location.reload();
                     }}>
@@ -90,7 +89,7 @@ export default function Navbar() {
                     </button>
                 </li>
                 </> : <>
-                <li className="text-gold hover:text-indigo-200 font-medium">
+                <li className="text-cyan-200 font-medium hover:text-fuchsia-200 hover:italic hover:font-bold">
                   <Link to="/signup">Login/Signup</Link>
                 </li></>}
               </ul>

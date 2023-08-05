@@ -11,9 +11,6 @@ export default function About(){
         <div className="m-3 p-5 text-center">
             <h1 className="text-[4rem] font-bold text-gold">Coming Soon...</h1>
         </div>
-       
-
-   
         </>
     )
 }

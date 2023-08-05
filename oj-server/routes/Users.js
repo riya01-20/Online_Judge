@@ -66,9 +66,9 @@ router.post('/auth', async(req, res) => {
         const decoded = jwt.verify(token, process.env.JWT);
         const userId = decoded.id;
 
-        return res.json({message: `Authenicated user: ${userId}`, tag: true})
+        return res.json({message: `Authenticated user: ${userId}`, tag: true})
     } catch(Err){
-        return res.json({error: "Not authenicated"});
+        return res.json({error: "Not authenticated"});
     }
 })
 

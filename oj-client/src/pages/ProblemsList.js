@@ -90,25 +90,6 @@ export default function ProblemsList() {
           </div>
         </div>
       )}
-
-      {/* <table className="table">
-      <thead>
-        <tr>
-          <th>Problem ID</th>
-          <th>Problem Name</th>
-          <th>Difficulty</th>
-        </tr>
-      </thead>
-      <tbody>
-        {problems.map((problem) => (
-          <tr key={problem.id}>
-            <td>{problem.id}</td>
-            <td>{problem.name}</td>
-            <td>{problem.difficulty}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table> */}
     </>
   );
 }

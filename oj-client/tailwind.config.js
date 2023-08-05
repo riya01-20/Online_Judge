@@ -3,11 +3,12 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     fontFamily: {
-      'monocode': ['Roboto Mono', 'monospace']
+      'monocode': ['Roboto Mono', 'monospace'],
+      'poppin': ['Poppins', 'sans-serif']
     },
     extend: {
       textColor: {
-        'gold': '#FFD700', // Replace with your desired color value
+        'gold': '#a5f3fc', // Replace with your desired color value
       },
     },
   },

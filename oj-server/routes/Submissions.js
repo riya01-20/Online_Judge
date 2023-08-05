@@ -10,5 +10,4 @@ router.get('/all', async(req, res) => {
         return res.json({Error: err});
     }
 })
-
 module.exports = router;
