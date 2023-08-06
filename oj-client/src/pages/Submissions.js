@@ -61,25 +61,25 @@ export default function Submissions({timeString}){
                         <th></th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left tracking-wider"
+                          className="px-6 py-3 text-left tracking-wider text-white"
                         >
                           User Name
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left tracking-wider"
+                          className="px-6 py-3 text-left tracking-wider text-white"
                         >
                           Submission Time
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left tracking-wider"
+                          className="px-6 py-3 text-left tracking-wider text-white"
                         >
                           Problem Name
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-left tracking-wider"
+                          className="px-6 py-3 text-left tracking-wider text-white"
                         >
                           Verdict
                         </th>
@@ -103,7 +103,11 @@ export default function Submissions({timeString}){
                             <td className="px-6 py-4 whitespace-nowrap">
                               {prob.problem_name}
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
+                            <td className="px-6 py-4 whitespace-nowrap"
+                            style={{
+                              color:
+                              checkVerdict(prob.verdict) === "Accepted" ? "#9ae6b4" : "red"
+                            }}>
                               {checkVerdict(prob.verdict)}
                             </td>
                           </tr>

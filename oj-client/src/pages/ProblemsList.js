@@ -10,7 +10,6 @@ export default function ProblemsList() {
   const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    
     get_all_problems().then((data) => {
       console.log(data.message);
       setProblem(data.message);
@@ -23,21 +22,20 @@ export default function ProblemsList() {
       <Navbar />
       {loading ? (
         <>
-        <div className="h-screen flex items-center justify-center">
-        <ThreeCircles
-            height="100"
-            width="100"
-            color="#FFD700"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel="three-circles-rotating"
-            outerCircleColor=""
-            innerCircleColor=""
-            middleCircleColor=""
-          />
-        </div>
-         
+          <div className="h-screen flex items-center justify-center">
+            <ThreeCircles
+              height="100"
+              width="100"
+              color="#FFD700"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+              ariaLabel="three-circles-rotating"
+              outerCircleColor=""
+              innerCircleColor=""
+              middleCircleColor=""
+            />
+          </div>
         </>
       ) : (
         <div class="flex flex-col items-center justify-center bg-[#212731] py-10">
@@ -51,13 +49,13 @@ export default function ProblemsList() {
                         <th></th>
                         <th
                           scope="col"
-                          class="px-6 py-3 text-left tracking-wider"
+                          class="px-6 py-3 text-left tracking-wider text-white"
                         >
                           Problem Name
                         </th>
                         <th
                           scope="col"
-                          class="px-6 py-3 text-left tracking-wider"
+                          class="px-6 py-3 text-left tracking-wider text-white"
                         >
                           Difficulty
                         </th>
@@ -71,12 +69,18 @@ export default function ProblemsList() {
                             <td class="flex px-6 py-4 whitespace-nowrap">
                               <Link
                                 to={`/problems/${prob._id}`}
-                                class="ml-2 font-medium hover:underline"
+                                class="ml-2 font-medium hover:underline hover:italic hover:text-fuchsia-200"
                               >
                                 {prob.name}
                               </Link>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
+                            <td
+                              class="px-6 py-4 whitespace-nowrap "
+                              style={{
+                                color:
+                                  prob.difficulty === "Easy" ? "green" : prob.difficulty === "Medium"? "yellow" : "red"
+                              }}
+                            >
                               {prob.difficulty}
                             </td>
                           </tr>

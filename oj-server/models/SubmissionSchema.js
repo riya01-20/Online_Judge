@@ -16,7 +16,6 @@ const Submissions = new mongoose.Schema(
         verdict: {
             type: String
         }
-      
         
     }
 )

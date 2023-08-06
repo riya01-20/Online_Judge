@@ -9,39 +9,6 @@ if(!fs.existsSync(outputPath)){
     fs.mkdirSync(outputPath, {recursive: true});
 }
 
-// const executeCpp = (filepath, user_input) => {
-//     const jobId = 'temp'; 
-//     const outPath = path.join(outputPath, `${jobId}.out`)
-//     const inputFilePath = path.join(outputPath, 'input.txt');
-//     console.log(outPath)
-//     console.log(user_input)
-//     fs.writeFileSync(inputFilePath,user_input);
-//     // return outPath;
-
-//     return new Promise((resolve, reject) => {
-//         if (fs.existsSync(outPath)) {
-//             fs.unlinkSync(outPath);
-//           }
-//         exec(`g++ ${filepath} -o ${outPath}`, (err, stdout, stderr) => {
-           
-//             if(err){
-//                 reject((err, stderr));
-//             } else {
-//                 exec(`cd ${outputPath} && ./${jobId}.out < input.txt`, (err, stdout, stderr) => {
-//                     // console.log("Yesssssss")
-//                     if(err){
-//                         // console.log(err);
-//                         reject((err, stderr));
-//                     }
-//                     else{
-//                         // console.log("Yesssssss")
-//                         resolve(stdout);
-//                     }
-//                 })
-//             }
-//         })
-//     })
-// }
 
 const executeCpp = (filepath, user_input, timeoutMillis = 3000) => {
     const jobId = 'temp';
@@ -79,20 +46,6 @@ const executeCpp = (filepath, user_input, timeoutMillis = 3000) => {
       });
     });
   };
-// const executePython = (filepath) => {
-//     const jobId = path.basename(filepath).split(".")[0]; 
-//     console.log(jobId);
-//     return new Promise((resolve, reject) => {
-//         exec(`python ${jobId}.py`, (err, stdout, stderr) => {
-//             if(err){
-//                 // console.log("Yess")
-//                 reject((err, stderr));
-//             }
-//             resolve(stdout);
-//         });
-//     })
-
-// }
 
 const executePython = (filepath) => {
     const jobId = path.basename(filepath).split(".")[0];
