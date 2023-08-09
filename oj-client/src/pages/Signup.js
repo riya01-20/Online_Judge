@@ -84,9 +84,7 @@ const SignUp = () => {
                   setEmail(e.target.value);
                 }}
               />
-
-             
-
+              
               <input
                 className="input"
                 type="password"

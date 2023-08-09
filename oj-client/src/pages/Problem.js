@@ -51,9 +51,6 @@ export default function Problem() {
         } else {
           setIsUserLoggedIn(false);
         }
-        // get_user_by_id(obj).then((data) => {
-        //   setName(data.message.user_name);
-        // })
       });
     }
 
@@ -87,17 +84,10 @@ export default function Problem() {
       run_compiler(payload).then((data) => {
         console.log(data);
         setRunCode(data.output);
-        // setOutputVerdict(false);
       });
-
-      // setIsLoading(false);
-      // outputRef.current.scrollIntoView({behaviour: 'smooth'});
     } catch (err) {
       console.log(err);
     }
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 2000);
   };
 
 
@@ -111,7 +101,6 @@ export default function Problem() {
       user_id: userId,
     };
     console.log(payload);
-
     try {
       submit_compiler(payload).then((data) => {
         console.log(data, "hemlo");
@@ -129,20 +118,6 @@ export default function Problem() {
       console.log(err);
     }
   };
-
-  //   if(codeLang === 'cpp'){
-  //     valext=[cpp()];
-  //     code = `#include <bits/stdc++.h>
-  // using namespace std;
-  // int main(){
-  //   //your code here
-
-  //   return 0;
-  // }`
-  //   } else if(codeLang === 'python'){
-  //     valext=[python()];
-  //     code = `print("Hello World")`
-  //   }
 
   return (
     <>
@@ -329,28 +304,3 @@ export default function Problem() {
     </>
   );
 }
-
-//   if (codeLang === "cpp") {
-//     console.log("Yess");
-//     valcode = `#include <bits/stdc++.h>
-// using namespace std;
-
-// int main(){
-//   //your code here
-
-//   return 0;
-// }`;
-//     valext = [cpp()];
-//   } else if (codeLang === "java") {
-//     console.log("ajava");
-//     valcode = `class ProJudge{
-//   public static void main(String [] args){
-//       System.out.printIn("Welcome to Java editor");
-//   }
-// }`;
-//     valext = [java()];
-//   } else if (codeLang === "python") {
-//     console.log("python");
-//     valcode = `print("Welcome to python editor")`;
-//     valext = [python()];
-//   }

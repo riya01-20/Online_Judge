@@ -3,12 +3,12 @@ const fs = require('fs');
 const path = require('path');
 const {v4: uuid} = require('uuid');
 
-const outputPath = path.join(__dirname, 'output');
+const outputPath = path.join(__dirname, 'output');//give the directory path of output folder
 
+//if dirCodes doesn't exists then make a directory name output
 if(!fs.existsSync(outputPath)){
     fs.mkdirSync(outputPath, {recursive: true});
 }
-
 
 const executeCpp = (filepath, user_input, timeoutMillis = 3000) => {
     const jobId = 'temp';
@@ -25,11 +25,11 @@ const executeCpp = (filepath, user_input, timeoutMillis = 3000) => {
       const compileCommand = `g++ ${filepath} -o ${outPath}`;
       const executeCommand = `${outPath} < ${inputFilePath}`;
   
-      exec(compileCommand, (err, stdout, stderr) => {
+      exec(compileCommand, (err, stdout, stderr) => {//compile the code and if error then reject else execute
         if (err) {
           reject(err);
         } else {
-          exec(executeCommand, (err, stdout, stderr) => {
+          exec(executeCommand, (err, stdout, stderr) => {//after successful compilation execute the code  
             if (err) {
               if (err.code === 124) {
                 console.log(err.message); 

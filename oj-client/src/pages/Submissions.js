@@ -24,11 +24,6 @@ export default function Submissions({timeString}){
             setGetUser(data);
           })  
         });
-
-    
-
-        
-       
     }, [])
 
     const checkVerdict = (verdictval) => {
