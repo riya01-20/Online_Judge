@@ -32,7 +32,7 @@ router.post('/signup', async(req, res) => {
 
 
     } catch(err){
-        return res.json({error: err});
+        return res.json({error: err,message:"True"});
     }
 })
 // login route for the already signed up user

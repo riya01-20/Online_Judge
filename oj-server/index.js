@@ -11,10 +11,19 @@ const problemRoutes = require("./routes/Problems");
 const submissionRoutes = require("./routes/Submissions");
 const userRoutes = require("./routes/Users");
 
+// try {
+//     mongoose.connect(process.env.MONGO_URI);
+//     console.log("DB connected ");
+// } catch(err){
+//     console.log(err);
+// }
 try {
-    mongoose.connect(process.env.MONGO_URI);
-    console.log("DB connected ");
+    mongoose.connect(process.env.MONGO_URI).then(() => {
+        console.log("Db Connected");
+    });
+    // console.log("DB connected ");
 } catch(err){
+    console.log("yesssssssssssss");
     console.log(err);
 }
 

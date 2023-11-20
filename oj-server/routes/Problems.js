@@ -116,7 +116,7 @@ router.post('/submit', async(req, res) => {
 })
 // route to run the code written by the user in the compiler window 
 router.post('/run', async (req, res) => {
-    const { lang="cpp", code, user_input} = req.body;
+    const { lang, code, user_input} = req.body;
     console.log(code);
     if(code === undefined){
         return res.json({message: "Empty code body"});
