@@ -9,7 +9,7 @@ const outputPath = path.join(__dirname, 'output');//give the directory path of o
 if(!fs.existsSync(outputPath)){
     fs.mkdirSync(outputPath, {recursive: true});
 }
-
+//if program takes more than 3 sec then it is a TLE
 const executeCpp = (filepath, user_input, timeoutMillis = 3000) => {
     const jobId = 'temp';
     const outPath = path.join(outputPath, `${jobId}.exe`);
@@ -22,8 +22,8 @@ const executeCpp = (filepath, user_input, timeoutMillis = 3000) => {
         fs.unlinkSync(outPath);
       }
   
-      const compileCommand = `g++ ${filepath} -o ${outPath}`;
-      const executeCommand = `${outPath} < ${inputFilePath}`;
+      const compileCommand = `g++ ${filepath} -o ${outPath}`;// compiler command (just did the hard coding like it will be some )
+      const executeCommand = `${outPath} < ${inputFilePath}`;//
   
       exec(compileCommand, (err, stdout, stderr) => {//compile the code and if error then reject else execute
         if (err) {
